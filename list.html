@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container1">
+        <nav>
+            <h1>Cryptocurrency Prices by Market Cap</h1>
+        </nav>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Symbol</th>
+                    <th> Name</th>
+                    <th>Price</th>
+                    <th>High_24h</th>
+                    <th>Low_24h</th>
+
+                </tr>
+            </thead>
+
+            <div id="container">hii</div>
+
+            <button onclick="myFunction()">Copy</button>
+
+            <tbody id="data">
+            </tbody>
+
+        </table>
+
+        <h1>Top Coins Trending From last 24_Hours</h1>
+
+
+        <table>
+            <tbody id="seven"></tbody>
+        </table>
+
+
+    </div>
+</body>
+<script>
+    function myFunction() {
+        document.getElementById('container').innerHTML = document.getElementById('data').temp[0].itemData[0].market_cap_rank;
+    }
+</script>
+<script type="text/Javascript" src="chart.js"></script>
+
+
+
+
+</html>

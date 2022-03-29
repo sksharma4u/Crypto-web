@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>My Crypto cap</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <video autoplay loop class="vid" muted plays-inline>
+            <source src="3.mp4" type="video/mp4">
+      </video>
+
+        <nav>
+            <img src="logo.png" class="logo">
+            <ul>
+                <li><a href="#">Market</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">White Papers</a></li>
+                <li><a href="#">About us</a></li>
+            </ul>
+            <a href="#" class="btn"> EN</a>
+        </nav>
+
+        <div class="content">
+            <h1>BUY & <br> SELL <span> Crypto</span></h1>
+            <p>World's biggest Cryptocurrency exchange available on web <br> as well mobile phone .</p>
+            <a href="list.html" class="btn">EXPLORE MORE</a>
+        </div>
+
+        <div class="coin-list">
+
+            <div class="coin">
+                <img src="bitcoin.png">
+                <div>
+                    <h3>$<span id="Bitcoin"></span></h3>
+                    <p>Bitcoin</p>
+                </div>
+            </div>
+
+            <div class="coin">
+                <img src="ethereum.png">
+                <div>
+                    <h3>$<span id="ethereum"></span></h3>
+                    <p>Ethereum</p>
+                </div>
+            </div>
+
+            <div class="coin">
+                <img src="dogecoin.png">
+                <div>
+                    <h3>$ <span id="dogecoin"></span></h3>
+                    <p>Dogecoin</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        var btc = document.getElementById("Bitcoin");
+        var eth = document.getElementById("ethereum");
+        var doge = document.getElementById("dogecoin");
+
+        var settings = {
+            "async": true,
+            "scrossDomain": true,
+            "url": "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Cdogecoin&vs_currencies=usd",
+            "method": "GET",
+            "header": {}
+        }
+
+        $.ajax(settings).done(function(response) {
+            btc.innerHTML = response.bitcoin.usd;
+            eth.innerHTML = response.ethereum.usd;
+            doge.innerHTML = response.dogecoin.usd;
+        });
+    </script>
+
+
+
+</body>
+
+</html>
